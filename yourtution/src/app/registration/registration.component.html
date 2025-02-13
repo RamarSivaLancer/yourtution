@@ -1,0 +1,47 @@
+<!--registration.component.html-->
+<form [formGroup]="registrationForm" (ngSubmit)="register()">
+  <div class="form-container">
+      <h2>Register</h2>
+      
+      <label for="username">Username:</label>
+      <input id="username" formControlName="username" autocomplete="on">
+      <div *ngIf="registrationForm.controls['username'].invalid && registrationForm.controls['username'].touched">
+        Username is required (min 6 characters)
+      </div>
+    
+      <label for="email">Email:</label>
+      <input id="email" formControlName="email" type="email" autocomplete="on">
+      <div *ngIf="registrationForm.controls['email'].invalid && registrationForm.controls['email'].touched">
+        Enter a valid email
+      </div>
+    
+      <label for="password">Password:</label>
+      <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" />
+      <div class="checkbox-group">
+        <input type="checkbox" id="showPasswordCheckbox" (change)="togglePasswordVisibility('password', $event)" formControlName="passwordCheckbox" />
+        <label for="showPasswordCheckbox">Show Password</label>
+      </div>
+      <div *ngIf="registrationForm.get('password')?.touched && registrationForm.get('password')?.invalid">
+        <small *ngIf="registrationForm.get('password')?.hasError('required')">Password is required</small>
+        <small *ngIf="registrationForm.get('password')?.hasError('minlength')"><p>Password must be at least 6 characters</p></small>
+        <small *ngIf="registrationForm.get('password')?.hasError('pattern')"><p>Password must contain one capital letter, one number and one special characters</p></small>
+        <small *ngIf="registrationForm.get('Password')?.hasError('passwordsMismatch')"> Passwords must match</small>
+      </div>
+    
+
+    <div>
+      <label for="confirmPassword">Confirm Password</label>
+      <input [type]="showConfirmPassword ? 'text' : 'password'" id="confirmPassword" formControlName="confirmPassword"/>
+      <div class="checkbox-group">
+        <input type="checkbox" id="showConfirmPasswordCheckbox" (change)="togglePasswordVisibility('confirmPassword', $event)" formControlName="confirmpasswordCheckbox"/>
+        <label for="showConfirmPasswordCheckbox">Show Password</label>
+      </div>
+      <div *ngIf="registrationForm.get('confirmPassword')?.touched && registrationForm.get('confirmPassword')?.invalid">
+        <small *ngIf="registrationForm.get('confirmPassword')?.hasError('required')"><p>Confirm password is required</p></small>
+        <small *ngIf="registrationForm.get('confirmPassword')?.hasError('passwordsMismatch') && registrationForm.get('confirmPassword')?.touched"><p>Passwords must match</p></small>
+      </div>
+    </div>
+    <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+  </div>
+  </form>
+  

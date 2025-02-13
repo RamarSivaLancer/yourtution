@@ -1,0 +1,79 @@
+// registration.component.scss
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    box-sizing: border-box;
+  
+    &.ng-invalid.ng-touched {
+      border: 2px solid red;
+      background-color: #ffe6e6;
+    }
+  
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 15px;
+  
+    &:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+  
+    &:hover:not(:disabled) {
+      background-color: #0056b3;
+    }
+  }
+  .checkbox-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+
+    input[type="checkbox"] {
+      width: 10px;
+    }
+
+    label {
+       margin-top: 0px;
+    }
+
+  }
