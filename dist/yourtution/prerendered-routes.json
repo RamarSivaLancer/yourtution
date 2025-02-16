@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "/yourtution": {},
-    "/yourtution/courses": {},
-    "/yourtution/home": {},
-    "/yourtution/login": {},
-    "/yourtution/signup": {}
-  }
-}
