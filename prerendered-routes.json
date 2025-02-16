@@ -1,9 +1,0 @@
-{
-  "routes": {
-    "/": {},
-    "/courses": {},
-    "/home": {},
-    "/login": {},
-    "/signup": {}
-  }
-}
